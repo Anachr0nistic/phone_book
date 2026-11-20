@@ -6,12 +6,19 @@ phone = 0
 
 help_prompt = "add - adds a new contact in NAME PHONENUMBER format\nfind - find a contact via name \nshow - show all contacts\nhelp - reprints the commands like above"
 def get_contacts():
+    """Henter kontaktoplysningerne fra 'contacts.json'
+    """
     global contacts
     with open('contacts.json', 'r') as f:
         contacts = json.load(f)
         return contacts
     
 def add_contact():
+    """tager et input som er mellemrumssepareret ved navn og nummer. 
+        
+        Nummeret må gerne have mellemrum, men ikke landkoder.
+        Mellemrummet af tallene fjernes og gemmes i en JSON fil.
+    """
     info = input("name and number: ").split()
     name = info[0]
     info.pop(0)
@@ -31,6 +38,13 @@ def add_contact():
 
 
 def find_contact():
+    """Finder telefonnummeret af en person. Første navn kræves kun.
+
+       Dette betyder at flere brugere kan ikke have samme navn, så
+       eventuelt brug denne funktion til at finde brugernavne kun. 
+
+    """
+    contacts = get_contacts()
     person = input("type name")
     if person in contacts:
         print(f"{person}'s phone number is: {contacts[person]}")
@@ -38,13 +52,19 @@ def find_contact():
         print("person could not be found")
 
 def show_contacts():
-    global contacts
+    """Printer kontakterne ud gennem get_contacts() i formatet [rækkefølge]. [bruger]: [nummer]
+    """
+    i = 0
     contacts = get_contacts()
     for name in contacts:
-        print(f"name: {contacts[name]}")
+        i += 1
+        print(f"{i}. {name}: {contacts[name]}")
 
 def exit():
+    """Afslutter programmet ved at lukke while-lykken
+    """
     global run
+    
     run = False
 
 commands = {
@@ -63,4 +83,5 @@ while run:
         commands[command]()
     except:
         print("command does not exist.\ntry 'help' for help. ")
+print("process ended")
     
