@@ -11,7 +11,7 @@ Alt officiel dokumentation er dansk, men programmet og brugerdefineret navne sam
 Dokumentation af funktionerne,herunder beskrivelse og funktion, ses nedenfor.
 
 ### add_contacts()
-tager et input som er mellemrumssepareret ved navn og nummer. 
+Tager et input som er mellemrumssepareret ved navn og nummer. 
         
 Nummeret må gerne have mellemrum, men ikke landkoder.
 Mellemrummet af tallene fjernes og gemmes i en JSON fil.

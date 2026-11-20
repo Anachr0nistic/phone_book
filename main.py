@@ -14,10 +14,10 @@ def get_contacts():
         return contacts
     
 def add_contact():
-    """tager et input som er mellemrumssepareret ved navn og nummer. 
+    """Tager et input som er mellemrumssepareret ved navn og nummer. 
         
-        Nummeret må gerne have mellemrum, men ikke landkoder.
-        Mellemrummet af tallene fjernes og gemmes i en JSON fil.
+       Nummeret må gerne have mellemrum, men ikke landkoder.
+       Mellemrummet af tallene fjernes og gemmes i en JSON fil.
     """
     info = input("name and number: ").split()
     name = info[0]
