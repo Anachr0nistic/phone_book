@@ -20,7 +20,7 @@ def add_contact():
        Mellemrummet af tallene fjernes og gemmes i en JSON fil.
     """
     info = input("name and number: ").split()
-    name = info[0]
+    name = info[0].lower()
     info.pop(0)
     phone = "".join(info)
     try:
@@ -45,7 +45,7 @@ def find_contact():
 
     """
     contacts = get_contacts()
-    person = input("type name")
+    person = input("type name").lower()
     if person in contacts:
         print(f"{person}'s phone number is: {contacts[person]}")
     else:
