@@ -1,6 +1,12 @@
 # Telefonbog
 Et program, som gemmer kontakter som navne og numre i en json fil 'contacts.json'
 
+## Funktionsbeskrivelse
+Når programmet køres, kan en række kommandoer køres. Kør 'help' for at se listen af kommandoerne som kan eksekveres. 
+
+Alt officiel dokumentation er dansk, men programmet og brugerdefineret navne samt 'help' er skrevet i engelsk.
+
+
 ## Funktioner
 Dokumentation af funktionerne,herunder beskrivelse og funktion, ses nedenfor.
 
